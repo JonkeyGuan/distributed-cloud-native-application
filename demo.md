@@ -227,8 +227,8 @@ Retrieve the route from the `ca-central` cluster and access the online boutique
 
 ~~~
 $ oc get route -n onlineboutique frontend
-NAME       HOST/PORT                                                PATH   SERVICES   PORT   TERMINATION   WILDCARD
-frontend   frontend-onlineboutique.apps.ca-central.adetalhouet.ca          frontend   http                 None
+NAME       HOST/PORT                                                                PATH   SERVICES   PORT   TERMINATION   WILDCARD
+frontend   frontend-onlineboutique.apps.cluster-bd5dr.bd5dr.sandbox72.opentlc.com          frontend   http                 None
 ~~~
 
 ### Traffic path selection

@@ -51,9 +51,9 @@ Apply the following
 
 ~~~
 oc apply -f managed-cluster-set.yaml
-oc label managedcluster ca-toronto cluster.open-cluster-management.io/clusterset=online-boutique
-oc label managedcluster us-philly cluster.open-cluster-management.io/clusterset=online-boutique
-oc label managedcluster local-cluster cluster.open-cluster-management.io/clusterset=online-boutique
+oc label managedcluster ca-toronto cluster.open-cluster-management.io/clusterset=online-boutique --overwrite=true
+oc label managedcluster us-philly cluster.open-cluster-management.io/clusterset=online-boutique --overwrite=true
+oc label managedcluster local-cluster cluster.open-cluster-management.io/clusterset=online-boutique --overwrite=true
 ~~~
 
 This is the result in RHACM
@@ -266,9 +266,9 @@ Below are the all-in-one commands to run from the bare metal server which have a
 ~~~
 # Create cluster set
 oc apply -f managed-cluster-set.yaml
-oc label managedcluster ca-toronto cluster.open-cluster-management.io/clusterset=online-boutique
-oc label managedcluster us-philly cluster.open-cluster-management.io/clusterset=online-boutique
-oc label managedcluster local-cluster cluster.open-cluster-management.io/clusterset=online-boutique
+oc label managedcluster ca-toronto cluster.open-cluster-management.io/clusterset=online-boutique --overwrite=true
+oc label managedcluster us-philly cluster.open-cluster-management.io/clusterset=online-boutique --overwrite=true
+oc label managedcluster local-cluster cluster.open-cluster-management.io/clusterset=online-boutique --overwrite=true
 
 # Import clusters in ArgoCD
 oc apply -f gitopscluster.yaml

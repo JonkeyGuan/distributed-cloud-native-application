@@ -169,21 +169,21 @@ Run the following in your sever to deploy Redis and expose the redis service.
 
 ~~~
 podman run -d \
-  --name gateway \
+  --name redis_server \
   -v $PWD/redis-data:/var/redis/data  \
   -p 6379:6379 \
   redis
-skupper gateway expose redis-cart localhost 6379 --protocol tcp -c ca-central -n onlineboutique --type podman
+skupper gateway expose redis-cart localhost 6379 --protocol tcp -n onlineboutique --type podman
 ~~~
 
 To verify the service is properly exposed, you can use the following command
 
 ~~~
-$ skupper gateway status -n onlineboutique -c ca-central
-Gateway Definitions:
-╰─ gateway type: podman version: 1.17.1 url: amqp://127.0.0.1:5672
+$ skupper gateway status -n onlineboutique
+Gateway Definition:
+╰─ workstation-root type:podman version:2.4.3
    ╰─ Bindings:
-      ╰─ redis-cart:6379 tcp redis-cart:6379 10.0.0.249 6379
+      ╰─ redis-cart:6379 tcp redis-cart:6379 localhost 6379
 ~~~
 
 ### Service Layer Interconnect
@@ -293,7 +293,7 @@ sleep 30
 
 # Deploy redis and expose the service through Skupper gateway
 podman run -d --name redis_server -v $PWD/redis-data:/var/redis/data -p 6379:6379 redis
-skupper gateway expose redis-cart localhost 6379 --protocol tcp -c admin -n onlineboutique --type podman
+skupper gateway expose redis-cart localhost 6379 --protocol tcp -n onlineboutique --type podman
 ~~~
 
 ### Delete everything
@@ -327,5 +327,6 @@ oc label managedcluster local-cluster cluster.open-cluster-management.io/cluster
 oc delete -f managed-cluster-set.yaml
 
 # Delete redis and skupper gateway
-podman rm -f gateway redis_server
+podman rm -f redis_server
+skupper gateway delete
 ~~~

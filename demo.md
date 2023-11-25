@@ -169,11 +169,11 @@ Run the following in your sever to deploy Redis and expose the redis service.
 
 ~~~
 podman run -d \
-  --name redis_server \
+  --name gateway \
   -v $PWD/redis-data:/var/redis/data  \
   -p 6379:6379 \
   redis
-skupper gateway expose redis-cart localhost 6379 --protocol tcp -c ca-central -n onlineboutique --type podman --name gateway
+skupper gateway expose redis-cart localhost 6379 --protocol tcp -c ca-central -n onlineboutique --type podman
 ~~~
 
 To verify the service is properly exposed, you can use the following command
@@ -293,7 +293,7 @@ sleep 30
 
 # Deploy redis and expose the service through Skupper gateway
 podman run -d --name redis_server -v $PWD/redis-data:/var/redis/data -p 6379:6379 redis
-skupper gateway expose redis-cart localhost 6379 --protocol tcp -c admin -n onlineboutique --type podman --name gateway
+skupper gateway expose redis-cart localhost 6379 --protocol tcp -c admin -n onlineboutique --type podman
 ~~~
 
 ### Delete everything

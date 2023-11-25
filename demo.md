@@ -316,7 +316,7 @@ sleep 30
 
 # Remove clusters from ArgoCD
 oc label managedcluster ca-toronto local-argo-
-oc label managedcluster us-philly local-arg-
+oc label managedcluster us-philly local-argo-
 oc label managedcluster local-cluster local-argo-
 oc delete -f gitopscluster.yaml
 

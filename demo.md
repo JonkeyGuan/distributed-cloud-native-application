@@ -193,8 +193,8 @@ Now, let's look into the Skupper UI, from the `ca-central` to validate the link 
 Retrieve the Route to access Skupper from our `ca-central` cluster
 ~~~
 $ oc get route -n onlineboutique skupper
-NAME      HOST/PORT                                               PATH   SERVICES   PORT      TERMINATION          WILDCARD
-skupper   skupper-onlineboutique.apps.ca-central.adetalhouet.ca          skupper    metrics   reencrypt/Redirect   None
+NAME      HOST/PORT                                                               PATH   SERVICES   PORT      TERMINATION          WILDCARD
+skupper   skupper-onlineboutique.apps.cluster-bd5dr.bd5dr.sandbox72.opentlc.com          skupper    metrics   reencrypt/Redirect   None
 ~~~
 
 ![](assets/link-fabric.png)

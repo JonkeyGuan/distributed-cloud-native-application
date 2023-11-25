@@ -5,7 +5,6 @@ metadata:
   namespace: onlineboutique
 data:
   name: CHANGEME
-  console-authentication: internal
+  console-authentication: openshift
   console: "true"
   flow-collector: "true" 
-  router-console: "true"
